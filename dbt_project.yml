@@ -30,13 +30,7 @@ models:
   coalesce_intro_to_semantic_layer:
     marts:
       +materialized: table
-      +tags: ['tag']
-      finance:
-        +group: finance
-      marketing:
-        +group: marketing
-      operations:
-        +group: operations
+      +tags: ['marts']
     intermediate:
       +materialized: view
     staging:
