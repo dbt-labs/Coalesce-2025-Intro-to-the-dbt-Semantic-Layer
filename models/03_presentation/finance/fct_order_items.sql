@@ -32,6 +32,7 @@ final as (
         order_item.receipt_date,
         order_item.ship_mode,
         part_supplier.cost as supplier_cost,
+        part_supplier.cost * quantity as total_supplier_cost,
         order_item.base_price,
         order_item.discount_percentage,
         order_item.discounted_price,

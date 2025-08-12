@@ -7,10 +7,12 @@ metrics:
     label: Customer Account Balance
     type: simple
     type_params:
-      measure: account_balance
+      measure: 
+        name: account_balance
   - name: met_count_customers
     description: The disctinct count of customers
     label: Count Customers
     type: simple
     type_params:
-      measure: count_customer
+      measure:
+        name: count_customer

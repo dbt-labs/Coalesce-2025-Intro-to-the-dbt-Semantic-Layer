@@ -41,6 +41,8 @@ models:
         description: '{{ doc("ship_mode") }}'
       - name: supplier_cost
         description: '{{ doc("cost") }}'
+      - name: total_supplier_cost
+        description: '{{doc("total_cost")}}'
       - name: base_price
         description: '{{ doc("base_price") }}'
       - name: discount_percentage
