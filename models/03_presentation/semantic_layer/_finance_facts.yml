@@ -1,9 +1,11 @@
 semantic_models:
-- name: order_items
-  description: Order items fact table with detailed sales and order information.
+- name: sem_order_items
   model: ref('fct_order_items')
+  description: Order items fact table with detailed sales and order information.
   defaults:
     agg_time_dimension: order_date
+
+#### Entities ####
   entities:
   - name: order_item
     type: primary
@@ -20,12 +22,10 @@ semantic_models:
   - name: supplier
     type: foreign
     expr: supplier_id
+
+#### Dimensions ####
   dimensions:
-  - name: order_date
-    description: Date of the order.
-    type: time
-    type_params:
-      time_granularity: day
+  # Categorigcal Dimensions
   - name: status_code
     description: Status of the order item.
     expr: order_item_status_code
@@ -33,9 +33,15 @@ semantic_models:
   - name: return_flag
     description: Return flag of the order item.
     type: categorical
-  # - name: line_number
-  #   description: Line number of the order item.
-  #   type: categorical
+  - name: ship_mode
+    description: Shipping mode of the order item.
+    type: categorical
+  # Time Dimensions
+  - name: order_date
+    description: Date of the order.
+    type: time
+    type_params:
+      time_granularity: day
   - name: ship_date
     description: Date the order item was shipped.
     type: time
@@ -51,27 +57,18 @@ semantic_models:
     type: time
     type_params:
       time_granularity: day
-  - name: ship_mode
-    description: Shipping mode of the order item.
-    type: categorical
+
+#### Measures ####
   measures:
+  # Sums
   - name: supplier_cost
     description: Cost from the supplier for the order item.
     agg: sum
   - name: base_price
     description: Base price of the order item.
     agg: sum
-  - name: discount_percentage
-    description: Discount percentage applied to the order item.
-    agg: average
   - name: discounted_price
     description: Discounted price of the order item.
-    agg: sum
-  - name: tax_rate
-    description: Tax rate applied to the order item.
-    agg: average
-  - name: order_item_count
-    description: Count of order items.
     agg: sum
   - name: quantity
     description: Total units of the order item.
@@ -91,15 +88,22 @@ semantic_models:
   - name: net_item_sales_amount
     description: Net sales amount of the order item.
     agg: sum
+  # Averages
+  - name: discount_percentage_average
+    description: Discount percentage applied to the order item.
+    agg: average
+    expr: discount_percentage
+  - name: tax_rate_average
+    description: Tax rate applied to the order item.
+    agg: average
+    expr: tax_rate
+  # Counts
   - name: count_order_item
     agg: count
     expr: order_item_id
   - name: count_order
     agg: count_distinct
     expr: order_id
-  - name: count_customer
-    agg: count_distinct
-    expr: customer_id
   - name: count_part
     agg: count_distinct
     expr: part_id
