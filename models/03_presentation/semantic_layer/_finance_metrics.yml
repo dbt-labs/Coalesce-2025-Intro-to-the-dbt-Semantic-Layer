@@ -4,55 +4,55 @@ metrics:
   ### Simple Metrics ##
   - name: met_supplier_cost
     description: The supplier cost of an item.
-    label: Supplier Cost
+    label: Item Cost
     type: simple
     type_params:
       measure: supplier_cost
   - name: met_base_price
     description: The base price of an item.
-    label: Base Cost
+    label: Item Price - Base
     type: simple
     type_params:
       measure: base_price
   - name: met_discounted_price
     description: The discounted price of an item.
-    label: Discounted Cost
+    label: Item Price - Discounted
     type: simple
     type_params:
       measure: discounted_price
   - name: met_quantity
     description: The quantity of items purchased in the order.
-    label: Quanitity
+    label: Item Quanitity
     type: simple
     type_params:
       measure: quantity
   - name: met_gross_item_sales_amount
-    description: The gross item sales amount for the item.
-    label: Gross Item Sales Amount
+    description: The gross sales amount for the item.
+    label: Sales Amount - Gross
     type: simple
     type_params:
       measure: gross_item_sales_amount
   - name: met_discounted_item_sales_amount
     description: The discounted item sales amount for the item.
-    label: Discounted Item Sales Amount
+    label: Sales Amount - Discounted
     type: simple
     type_params:
       measure: discounted_item_sales_amount
   - name: met_item_discount_amount
     description: The item discount amount.
-    label: Item Sales Discount Amount
+    label: Sales Discount
     type: simple
     type_params:
       measure: item_discount_amount
   - name: met_item_tax_amount
     description: The item tax amount.
-    label: Item Sales Tax Amount
+    label: Sales Amount - Tax
     type: simple
     type_params:
       measure: item_tax_amount
   - name: met_net_item_sales_amount
     description: The item sales amount.
-    label: Item Net Sales Amount
+    label: Sales Amount - Net
     type: simple
     type_params:
       measure: net_item_sales_amount
