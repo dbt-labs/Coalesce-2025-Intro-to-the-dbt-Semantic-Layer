@@ -278,7 +278,7 @@ saved_queries:
         - discounted_price
         - net_item_sales_amount
       group_by:
-        - "Dimension('ship_mode')"
+        - Dimension('order_item__ship_mode')
     exports:
       - name: order_item_price_summary
         config:
