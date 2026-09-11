@@ -216,6 +216,14 @@ models:
         agg: count_distinct
         expr: order_id
 
+      - name: count_customers_with_orders
+        description: The distinct count of customers with order items.
+        label: Customers With Orders
+        type: simple
+        agg: count_distinct
+        expr: customer_id
+
+
       - name: count_part
         description: The count of parts.
         type: simple
