@@ -1,16 +1,11 @@
-# dbt Training - dbt Onboarding Exemplar
+# dbt Summit 2026: Standardizing Insights with the Semantic Layer
 
-This is a [dbt](https://www.getdbt.com) project for dbt Lab's dbt Onboarding training.
+This is a [dbt](https://www.getdbt.com) project for dbt Lab's dbt Summit 2026.
 
 Our analytics stack:
 - Loader: Snowflake's TPCH sample data
 - Warehouse: Snowflake
 - Transformation: dbt
-
-## Permissions
-
-Access to the Snowflake warehouse is managed on a per-user basis by the training team. 
-If you need access, open a request in the #ask-training Slack channel.
 
 ## Using This Project
 
