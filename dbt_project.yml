@@ -32,7 +32,7 @@ models:
       +materialized: view
     intermediate:
       +materialized: view
-    03_presentation:
+    marts:
       finance:
         +materialized: table
         +tags: ['marts']
