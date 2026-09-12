@@ -28,7 +28,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 models:
   dbt_summit_getting_started_semantic_layer:
-    01_staging:
+    staging:
       +materialized: view
     02_intermediate:
       +materialized: view
