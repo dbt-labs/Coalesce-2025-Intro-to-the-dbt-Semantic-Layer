@@ -30,7 +30,7 @@ models:
   dbt_summit_getting_started_semantic_layer:
     staging:
       +materialized: view
-    02_intermediate:
+    intermediate:
       +materialized: view
     03_presentation:
       finance:
