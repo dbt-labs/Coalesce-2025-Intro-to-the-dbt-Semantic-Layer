@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'coalesce_intro_to_semantic_layer'
+name: 'dbt_summit_getting_started_semantic_layer'
 version: '1.0.0'
 config-version: 2
 require-dbt-version: '>=1.0.0'
@@ -25,12 +25,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 models:
-  coalesce_intro_to_semantic_layer:
+  dbt_summit_getting_started_semantic_layer:
     01_staging:
       +materialized: view
     02_intermediate:
       +materialized: view
-    03_presentation:
+    marts:
       finance:
         +materialized: table
         +tags: ['marts']
